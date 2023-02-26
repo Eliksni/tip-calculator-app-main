@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Imported Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <!-- Imorted CSS -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- <h1>
+    SPLI
+    <br/>
+    TTER
+  </h1> -->
+  <img class="logo" src="/images/logo.svg" alt="Splitter Logo">
+  <main>
+    <section class="forms">
+      <form class="forms__bill">
+        <label for="bill">Bill</label>
+        <input type="text" id="bill" name="bill" placeholder="0">
+      </form>
+      <div class="forms__tip"> 
+        <p>Select Tip %</p>
+        <div class="forms__grid-tip">
+          <button>5%</button>
+          <button>10%</button>
+          <button>15%</button>
+          <button>25%</button>
+          <button>50%</button>
+          <form class="forms__custom-tip">
+            <input type="text" id="custom" name="custom" placeholder="Custom">
+          </form>
+      </div>
+      </div>
+      <form class="forms__num-person">
+        <label for="num-person">Number of People</label>
+        <input type="text" id="num-person" name="num-person" placeholder="0">
+      </form>
+    </section>
+    <section class="results">
+      <div class="results__title">
+        <p class="results__type">
+          Tip Amount
+          <br/>
+          <span class="results__subtitle">/ person</span>
+        </p>
+        <p class="results__amount">
+          $0.00
+        </p>
+      </div>
+      <div class="results__title">
+        <p class="results__type">
+          Total
+          <br/>
+          <span class="results__subtitle">/ person</span>
+        </p>
+        <p class="results__amount">
+          $0.00
+        </p>
+      </div>
+      <button>RESET</button>
+    </section>
+  </main>
+</body>
+</html>
