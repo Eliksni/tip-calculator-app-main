@@ -12,8 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
-  <!-- Imorted CSS -->
+  <!-- Imported CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Imported JS -->
+  <script src="/script.js" type="module" defer></script>
 
 </head>
 <body>
@@ -25,9 +27,9 @@
   <img class="logo" src="/images/logo.svg" alt="Splitter Logo">
   <main>
     <section class="forms">
-      <form class="forms__bill">
+      <form class="forms__big">
         <label for="bill">Bill</label>
-        <input type="text" id="bill" name="bill" placeholder="0">
+        <input type="number" id="bill" name="bill" placeholder="0">
       </form>
       <div class="forms__tip"> 
         <p>Select Tip %</p>
@@ -37,14 +39,14 @@
           <button>15%</button>
           <button>25%</button>
           <button>50%</button>
-          <form class="forms__custom-tip">
-            <input type="text" id="custom" name="custom" placeholder="Custom">
+          <form class="forms__small">
+            <input type="number" id="custom" name="custom" placeholder="Custom">
           </form>
       </div>
       </div>
-      <form class="forms__num-person">
+      <form class="forms__big">
         <label for="num-person">Number of People</label>
-        <input type="text" id="num-person" name="num-person" placeholder="0">
+        <input type="number" id="num-person" name="num-person" placeholder="0">
       </form>
     </section>
     <section class="results">
@@ -54,7 +56,7 @@
           <br/>
           <span class="results__subtitle">/ person</span>
         </p>
-        <p class="results__amount">
+        <p class="results__amount" id="tip-amount">
           $0.00
         </p>
       </div>
@@ -64,11 +66,11 @@
           <br/>
           <span class="results__subtitle">/ person</span>
         </p>
-        <p class="results__amount">
+        <p class="results__amount" id="total">
           $0.00
         </p>
       </div>
-      <button>RESET</button>
+      <button id='reset-button'>RESET</button>
     </section>
   </main>
 </body>

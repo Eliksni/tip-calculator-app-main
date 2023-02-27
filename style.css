@@ -62,6 +62,18 @@
   /*
     9. Create a root stacking context
   */
+
+   /* Hide Up/Down arrows for number forms */
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+   }
+
+   input[type="number"] {
+     -moz-appearance: textfield;
+   }
+
   #root, #__next {
     isolation: isolate;
   }
@@ -78,6 +90,10 @@
 
     .forms__grid-tip {
         grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .results {
+      margin-top: 2rem !important;
     }
 
     .results > button {
@@ -112,8 +128,6 @@
     border-top-left-radius: 2rem;
   }
 
- 
-
   input, label {
     display:block;
     width: 100%;
@@ -124,26 +138,31 @@
     margin: 2rem;
   }
 
-  .forms__bill {
-    margin-bottom: 2rem;
-  }
-
-  .forms__bill > label {
+  .forms__big > label {
     font-size: 1rem;
     color: var(--clr-neutral-700);
     margin-bottom: 0.5rem;
   }
 
-  .forms__bill > input {
+  .forms__big > input {
     color: var(--clr-neutral-800);
     text-align: right;
     border: none;
     background-color: var(--clr-neutral-200);
     border-radius: 0.25rem;
     padding: 0.5rem 1rem 0.5rem 1rem;
-    background-image: url('images/icon-dollar.svg');
+    
     background-position: 1rem 50%;
     background-repeat: no-repeat;
+  }
+
+  #bill {
+    background-image: url('images/icon-dollar.svg');
+    margin-bottom: 1.5rem;
+  }
+
+  #num-person {
+    background-image: url('images/icon-person.svg');
   }
 
   .forms__bill > input::placeholder {
@@ -156,17 +175,19 @@
 
   .forms__tip > p {
     font-size: 1rem;
-    color: var(--clr-neutral-700)
+    color: var(--clr-neutral-700);
+    margin-bottom: 1rem;
   }
 
   .forms__grid-tip {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    margin: 1rem 0rem 1rem 0rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
   }
 
   .forms__grid-tip > button {
+    cursor: pointer;
     background-color: var(--clr-neutral-800);
     border: none;
     border-radius: 0.25rem;
@@ -174,7 +195,12 @@
     padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
-  .forms__custom-tip > input {
+  .toggled {
+    background-color: var(--clr-primary-400) !important;
+    color: var(--clr-neutral-800) !important;
+  }
+
+  .forms__small > input {
     color: var(--clr-neutral-800);
     text-align: right;
     border: none;
@@ -184,36 +210,10 @@
     
   }
 
-  .forms__custom-tip > input::placeholder {
+  .forms__small > input::placeholder {
     color: var(--clr-neutral-600);
   }
-
-  .forms__custom-tip > input{
-    max-width: 100%;
-  }
-
-  .forms__num-person > label {
-    font-size: 1rem;
-    color: var(--clr-neutral-700);
-    margin-bottom: 0.5rem;
-  }
-
-  .forms__num-person > input {
-    color: var(--clr-neutral-800);
-    text-align: right;
-    border: none;
-    background-color: var(--clr-neutral-200);
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    background-image: url('images/icon-person.svg');
-    background-position: 1rem 50%;
-    background-repeat: no-repeat;
-  }
-
-  .forms__num-person > input::placeholder {
-    color: var(--clr-neutral-300)
-  }
-
+  
   .results {
     display: grid;
     background-color: var(--clr-neutral-800);
@@ -221,7 +221,7 @@
     border-radius: 1rem;
     padding: 1.5rem;
     margin: 2rem;
-    
+    margin-top: 0;
   }
 
   .results__title {
@@ -259,7 +259,6 @@ TODO:
   - Add hover/focus colors to buttons
   - Add focus colors to text inputs
   - Add "cant be zero" text
-  - Add JS functionality
 
 
 */
