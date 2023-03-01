@@ -2,6 +2,7 @@
 :root {
 
     --clr-primary-400: hsl(172, 67%, 45%);
+    --clr-primary-300: hsl(172, 57%, 77%);
     
     --clr-neutral-100: hsl(0, 0%, 100%);
     --clr-neutral-200: hsl(189, 41%, 97%);
@@ -114,12 +115,6 @@
     place-content: bottom;
   }
 
-  .logo {
-    justify-self: center;
-    margin: 2rem;
-    place-self: center;
-  }
-
   main {
     display: grid;
     background-color: var(--clr-neutral-100);
@@ -132,6 +127,14 @@
     display:block;
     width: 100%;
   }  
+
+  
+
+  .logo {
+    justify-self: center;
+    margin: 2rem;
+    place-self: center;
+  }
 
   .forms {
     display: grid;
@@ -156,6 +159,10 @@
     background-repeat: no-repeat;
   }
 
+  .forms__big > input:focus {
+    outline-color: var(--clr-primary-400);
+  }
+
   #bill {
     background-image: url('images/icon-dollar.svg');
     margin-bottom: 1.5rem;
@@ -163,6 +170,21 @@
 
   #num-person {
     background-image: url('images/icon-person.svg');
+  }
+
+  .num-person-warning-text {
+    text-align: right;
+    float: right;
+    color: hsl(13, 68%, 61%);
+  }
+
+  .num-person-warning-form {
+    outline: 2px solid hsl(13, 68%, 61%) !important;
+  }
+  
+
+  .hidden {
+    display: none;
   }
 
   .forms__bill > input::placeholder {
@@ -195,6 +217,11 @@
     padding: 0.5rem 1rem 0.5rem 1rem;
   }
 
+  .forms__grid-tip > button:hover {
+    background-color: var(--clr-primary-300);
+    color: var(--clr-neutral-800);
+  }
+
   .toggled {
     background-color: var(--clr-primary-400) !important;
     color: var(--clr-neutral-800) !important;
@@ -212,6 +239,10 @@
 
   .forms__small > input::placeholder {
     color: var(--clr-neutral-600);
+  }
+
+  .forms__small > input:focus {
+    outline-color: var(--clr-primary-400);
   }
   
   .results {
@@ -252,14 +283,11 @@
     border: none;
     border-radius: 0.25rem; 
     padding: 0.5rem 1rem 0.5rem 1rem;
+    cursor: pointer;
   }
 
-/*
-TODO:
-  - Add hover/focus colors to buttons
-  - Add focus colors to text inputs
-  - Add "cant be zero" text
-
-
-*/
+  .results > button:hover {
+    background-color: var(--clr-primary-300);
+    color: var(--clr-neutral-800);
+  }
   

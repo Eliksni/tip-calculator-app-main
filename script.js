@@ -22,7 +22,6 @@ class TippingCard {
         console.log(`${bill}, ${tipPercent}, ${numPeople}`)
         const tip = this.calculateTip(bill, tipPercent, numPeople)
         const total = this.calculateTotal(bill, tipPercent, numPeople)
-        console.log(`${tip}, ${total}`)
         this.tipAmountTextElement.textContent = this.formatter.format(`${isNaN(tip) ? 0 : tip.toString()}`)
         this.totalTextElement.textContent = this.formatter.format(`${isNaN(total) ? 0 : total.toString()}`)
     }
@@ -61,6 +60,19 @@ function getNumPeople() {
     else return 0
 }
 
+function checkValidNumPeople() {
+    if (numPeopleInput.value > 0) {
+        warningText.classList.add('hidden')
+        numPeopleInput.classList.remove('num-person-warning-form')
+    }
+        
+    else {
+        warningText.classList.remove('hidden')
+        numPeopleInput.classList.add('num-person-warning-form')
+    }
+        
+}
+
 
 // Import buttons and text-fields from DOM
 const billAmountInput = document.querySelector('#bill');
@@ -70,30 +82,34 @@ const totalTextElement = document.querySelector('#total');
 const tipButtons = document.querySelectorAll('.forms__grid-tip > button')
 const customTipInput = document.querySelector('#custom')
 const resetButton = document.querySelector('#reset-button')
+const warningText = document.querySelector('.num-person-warning-text')
 
 const tippingCard = new TippingCard(tipAmountTextElement, totalTextElement)
 
 billAmountInput.addEventListener('input', () => {
+    checkValidNumPeople()
     tippingCard.update(getBill(), getTipPercent(), getNumPeople())
 })
 
 numPeopleInput.addEventListener('input', () => {
+    checkValidNumPeople()
     tippingCard.update(getBill(), getTipPercent(), getNumPeople())
 })
 
 tipButtons.forEach(buttonClicked => {
     buttonClicked.addEventListener('click', () => {
+        checkValidNumPeople()
         tipButtons.forEach(button => {
             if (button === buttonClicked) toggleOn(buttonClicked)
             else toggleOff(button)
         })
         customTipInput.value = "";
-        console.log(getTipPercent())
         tippingCard.update(getBill(), getTipPercent(), getNumPeople())
     })
 })
 
 customTipInput.addEventListener('input', () => {
+    checkValidNumPeople()
     tipButtons.forEach(button => {
         toggleOff(button)
     })
@@ -107,6 +123,9 @@ resetButton.addEventListener('click', () => {
     })
     customTipInput.value = ""
     numPeopleInput.value = ""
+
+    warningText.classList.add('hidden');
+    numPeopleInput.classList.remove('num-person-warning-form')
     tippingCard.update(getBill(), getTipPercent(), getNumPeople())
 })
 
