@@ -7,16 +7,11 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -35,10 +30,6 @@ Users should be able to:
 
 #### Mobile View
 ![](./app-mobile.png)
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
@@ -53,31 +44,15 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project was a good recap of the basics of DOM manipulation and various calculations with JavaScript. It also allowed me another chance to practice writing well formatted HTML and CSS, with some refactoring here and there to avoid repetition and increase readability.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I took a mobile first approach to designing the interface, which made making the website responsive much easier
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Next for my studies I plan on taking on either a landing page to focus on my pure HTML/CSS skills, along with another, more difficult project that involves more JS and moving parts on the website (a 3+ difficulty higher project).
+
+I am also learning Svelte currently, and plan to do some of the projects with this framework as it is quite fun, and simplifies things a lot.
 ## Author
 
 - Website - [Brock Legentil](https://www.linkedin.com/in/brocklegentil/)
